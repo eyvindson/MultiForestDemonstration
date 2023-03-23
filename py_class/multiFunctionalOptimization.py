@@ -562,6 +562,8 @@ class MultiFunctionalOptimization:
                     display("Something strange in the problem")
                 if res == self.solver.NOT_SOLVED:
                     display("Problem could not be solved for some reason")            
+        for objName2 in self.objectiveTypes.keys():
+            self.objectiveFunction.SetCoefficient(self.objective[objName2],0)
         self.objectiveRanges = {objName: (lb[objName],ub[objName]) for objName in self.objectiveTypes.keys()}           
 
 
